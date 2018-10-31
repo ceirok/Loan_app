@@ -10,26 +10,33 @@ import java.util.List;
 
 public class PlanActivity extends AppCompatActivity {
 
-    private List<> items = new ArrayList();
-    private ArrayAdapter adapter;
+    private ArrayList<String> items = new ArrayList<>();
+    private ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan);
-        items.add(getResources().getString(R.id.per));
-        items.add(getResources().getString(R.id.intr));
-        items.add(getResources().getString(R.id.rep));
-        items.add(getResources().getString(R.id.outs));
-        for (int n = 1; n <= Loan.getInstance().getPeriods(); ++m)
+
+        // Issue 12: R.id.someVariable doesnt exist -> string variables come from R.string.someVariable
+        items.add(getResources().getString(R.string.per));
+        items.add(getResources().getString(R.string.intr));
+        items.add(getResources().getString(R.string.rep));
+        items.add(getResources().getString(R.string.outs));
+        // Issue 13: for loop contained wrong variable (++m)
+        for (int n = 1; n <= Loan.getInstance().getPeriods(); n++)
         {
             items.add("" + n);
             items.add(String.format("%1.2f", Loan.getInstance().interest(n)));
             items.add(String.format("%1.2f", Loan.getInstance().repayment(n)));
             items.add(String.format("%1.2f", Math.abs(Loan.getInstance().outstanding(n))));
         }
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         GridView grid = findViewById(R.id.grid);
-        grid.show(adapter);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
+        grid.setAdapter(adapter);
+
+        adapter.notifyDataSetChanged();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

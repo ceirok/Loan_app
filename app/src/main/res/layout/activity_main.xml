@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_weidth="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="20dp"
     tools:context=".MainActivity">
 
+    <!-- Issue 5: android:text @string variables had a typo (@strings/) -->
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <TableRow
             android:layout_width="match_parent"
@@ -20,7 +21,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@strings/lbl_cost" />
+                android:text="@string/lbl_cost" />
 
             <EditText
                 android:id="@+id/txtCost"
@@ -39,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@strings/lbl_loan" />
+                android:text="@string/lbl_loan" />
 
             <EditText
                 android:id="@+id/txtLoan"
@@ -58,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@strings/lbl_year" />
+                android:text="@string/lbl_year" />
 
             <EditText
                 android:id="@+id/txtYear"
@@ -77,7 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@strings/lbl_term" />
+                android:text="@string/lbl_term" />
 
             <EditText
                 android:id="@+id/txtTerm"
@@ -97,7 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@strings/lbl_rate" />
+                android:text="@string/lbl_rate" />
 
             <EditText
                 android:id="@+id/txtRate"
@@ -120,7 +121,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:onClick="onClear"
-                android:text="@strings/lbl_cler" />
+                android:text="@string/lbl_cler" />
 
             <Button
                 android:id="@+id/btnCalculate"
@@ -129,20 +130,20 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:onClick="onCalculate"
-                android:text="@strings/lbl_calc" />
+                android:text="@string/lbl_calc" />
         </TableRow>
     </TableLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@strings/lbl_paym" />
+            android:text="@string/lbl_paym" />
 
         <EditText
             android:id="@+id/txtPaym"
@@ -158,7 +159,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onAmort"
-        android:text="@strings/lbl_plan"
+        android:text="@string/lbl_plan"
         android:background="@null"/>
 
 </LinearLayout>

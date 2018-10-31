@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Issue 3: LinearLayout must contain all elements (GridView was out of LinearLayout) -->
+<!-- Issue 4: .PlanActivity had a typo (.PlansActivity) -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PlansActivity">
+    tools:context=".PlanActivity">
 
+    <!-- Issue 20: numColumns -->
+    <GridView
+    android:id="@+id/grid"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchMode="columnWidth"
+    android:numColumns="4"/>
 
 </LinearLayout>
-<GridView
-android:id="@+id/grid"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:stretchMode="columnWidth"
-android:numColumns="44"/>

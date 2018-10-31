@@ -9,8 +9,9 @@ public class Loan {
 
     public Loan() {
     }
-
-    public Loan getInstance() {
+    // Issue 1: Loan getInstance() must be a static method
+    // Issue 2: Missing getters and setters for principal, interestRate and periods
+    public static Loan getInstance() {
         if(instance == null)
         {
             synchronized (Loan.class)
@@ -24,6 +25,26 @@ public class Loan {
     public double payment()
     {
         return principal * interestRate / (1 - Math.pow(1 + interestRate, -periods));
+    }
+
+    public void setPrincipal(double num) {
+        this.principal = num;
+    }
+
+    public void setInstance(Loan instance) {
+        this.instance = instance;
+    }
+
+    public void setInterestRate(double interest) {
+        this.interestRate = interest;
+    }
+
+    public int getPeriods() {
+        return this.periods;
+    }
+
+    public void setPeriods(int periods) {
+        this.periods = periods;
     }
 
     public double outstanding(int n)

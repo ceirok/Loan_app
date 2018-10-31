@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Issue 19: PlanActivity was missing in Manifest.xml -->
+        <activity android:name=".PlanActivity">
+
+        </activity>
     </application>
 
 </manifest>
