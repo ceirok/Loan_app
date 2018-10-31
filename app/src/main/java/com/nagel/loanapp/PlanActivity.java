@@ -33,6 +33,7 @@ public class PlanActivity extends AppCompatActivity {
             items.add(String.format("%1.2f", Math.abs(Loan.getInstance().outstanding(n))));
         }
         GridView grid = findViewById(R.id.grid);
+        // Issue 21: Adapter instance was not created and linked to items list
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
         grid.setAdapter(adapter);
 
@@ -42,6 +43,8 @@ public class PlanActivity extends AppCompatActivity {
 
 
     }
+
+    // Issue 21: Override method for Options menu was missing
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

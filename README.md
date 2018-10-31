@@ -28,6 +28,8 @@ Example in readme: Issue 1: method pay was missing, added it because the applica
 * Issue 18: all EditText elements have to be linked to the activity
 * Issue 19: PlanActivity was missing in Manifest.xml
 * Issue 20: numColumns should not be 44 columns
+* Issue 21: Override method for Options menu was missing
+* Issue 22: Adapter instance was not created and linked to items list
 
 # Application description:
 This application lets user calculate the payment on a loan. Every time the loan is an annuity loan.
