@@ -25,7 +25,7 @@ public class PlanActivity extends AppCompatActivity {
         items.add(getResources().getString(R.string.rep));
         items.add(getResources().getString(R.string.outs));
         // Issue 13: for loop contained wrong variable (++m)
-        for (int n = 1; n <= Loan.getInstance().getPeriods(); n++)
+        for (int n = 1; n <= Loan.getInstance().getPeriods(); ++n)
         {
             items.add("" + n);
             items.add(String.format("%1.2f", Loan.getInstance().interest(n)));
